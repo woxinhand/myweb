@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.objectFactory" value="spring"/>
+    <package name="default" namespace="/" extends="struts-default">
+		<!-- 配置首页访问的Action -->
+		<action name="index" class="indexAction">
+			<result name="indexSuccess">/index.jsp</result>
+		</action>
+		
+		<!-- 配置用户的Action -->
+		<action name="zhuye" class="zhuyeAction" method="execute">
+		<result name="indexSuccess">/index.jsp</result>
+		<result name="dengluchenggong">/zhuye.jsp</result>
+		</action>
+		<action name="dengchu" class="degnchuAction" method="execute">
+		<result name="dengluchenggong">/登出.jsp</result>
+		</action>
+		<action name="diandi" class="diandiAction" method="execute">
+		<result name="dengluchenggong">/点滴分享.jsp</result>
+		</action>
+		<action name="rizi" class="riziAction" method="execute">
+		<result name="dengluchenggong">/日子.jsp</result>
+		</action>
+		<action name="wenzhang" class="wenzhangAction" method="execute">
+		<result name="dengluchenggong">/文章.jsp</result>
+		</action>
+		<action name="zhanzhang" class="zhanzhangAction" method="execute">
+		<result name="dengluchenggong">/站长分享.jsp</result>
+		</action>
+		<action name="checkname" class="cnAction" method = "execute"></action>
+		<action name ="tupian" class="tupianAction" method = "execute">
+		<result name="tupianSuccess">wenzhang.jsp</result>
+		</action>
+    </package>
+
+</struts>
+
